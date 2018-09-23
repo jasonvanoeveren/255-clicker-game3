@@ -1,25 +1,29 @@
-﻿package  {
-	
+﻿package {
+
 	import flash.display.MovieClip;
-	
-	
+
+	/**
+	 * This is the class for the Player object.
+	 */
 	public class Player extends MovieClip {
-		
-		
+
+		/**
+		 * Player constructor function.
+		 */
 		public function Player() {
-			// constructor code
+
 		}
-		
-		public function update():void {
-			
-			var tx:Number = parent.mouseX - x;
-			var ty:Number = parent.mouseY - y;
-			var angle:Number = Math.atan2(ty, tx);
+
+		/** Update design pattern. */
+		public function update(): void {
+			/** Change angle based on mouse position and rotate player. */
+			var tx: Number = parent.mouseX - x;
+			var ty: Number = parent.mouseY - y;
+			var angle: Number = Math.atan2(ty, tx);
 			angle *= 180 / Math.PI;
-			
+
 			rotation = angle + 90;
-			// rotate player sprite
 		}
 	}
-	
+
 }
